@@ -251,14 +251,9 @@
 								"source": {
 									"path": "$['current']['weather_descriptions'][0]"
 								}
-							},
-							{
-								"source": {
-									"path": "$['Column_1']"
-								}
 							}
 						],
-						"collectionReference": "$['Column_2']"
+						"collectionReference": "$['Column_1']"
 					}
 				},
 				"inputs": [
