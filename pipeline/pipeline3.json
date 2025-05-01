@@ -119,6 +119,16 @@
 							},
 							{
 								"source": {
+									"path": "$['current']['weather_icons'][0]"
+								}
+							},
+							{
+								"source": {
+									"path": "$['current']['weather_descriptions'][0]"
+								}
+							},
+							{
+								"source": {
 									"path": "$['current']['astro']['sunrise']"
 								}
 							},
@@ -242,16 +252,7 @@
 									"path": "$['current']['is_day']"
 								}
 							},
-							{
-								"source": {
-									"path": "$['current']['weather_icons'][0]"
-								}
-							},
-							{
-								"source": {
-									"path": "$['current']['weather_descriptions'][0]"
-								}
-							}
+							null
 						],
 						"collectionReference": "$['Column_1']"
 					}
