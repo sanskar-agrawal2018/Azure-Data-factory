@@ -35,8 +35,224 @@
 					},
 					"enableStaging": false,
 					"translator": {
-						"value": "@pipeline().Pipeline",
-						"type": "Expression"
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"path": "$['request']['type']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['request']['query']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['request']['language']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['request']['unit']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['location']['name']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['location']['country']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['location']['region']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['location']['lat']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['location']['lon']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['location']['timezone_id']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['location']['localtime']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['location']['localtime_epoch']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['location']['utc_offset']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['current']['observation_time']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['current']['temperature']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['current']['weather_code']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['current']['weather_icons'][0]"
+								}
+							},
+							{
+								"source": {
+									"path": "$['current']['weather_descriptions'][0]"
+								}
+							},
+							{
+								"source": {
+									"path": "$['current']['astro']['sunrise']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['current']['astro']['sunset']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['current']['astro']['moonrise']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['current']['astro']['moonset']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['current']['astro']['moon_phase']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['current']['astro']['moon_illumination']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['current']['air_quality']['co']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['current']['air_quality']['no2']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['current']['air_quality']['o3']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['current']['air_quality']['so2']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['current']['air_quality']['pm2_5']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['current']['air_quality']['pm10']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['current']['air_quality']['us-epa-index']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['current']['air_quality']['gb-defra-index']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['current']['wind_speed']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['current']['wind_degree']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['current']['wind_dir']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['current']['pressure']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['current']['precip']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['current']['humidity']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['current']['cloudcover']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['current']['feelslike']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['current']['uv_index']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['current']['visibility']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['current']['is_day']"
+								}
+							}
+						]
 					}
 				},
 				"inputs": [
