@@ -1,0 +1,9 @@
+{
+	"name": "azurelearning1903",
+	"location": "centralindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "738d7bc7-33cc-45b6-ac84-e43145a5ad9c",
+		"tenantId": "f9e69f8b-104b-4ed3-ae6b-a5e8dc5fd61f"
+	}
+}

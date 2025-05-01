@@ -1,0 +1,75 @@
+{
+	"name": "dataflow1",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "WeatherDataSet",
+						"type": "DatasetReference"
+					},
+					"name": "source1"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "WeatherDataSet",
+						"type": "DatasetReference"
+					},
+					"name": "sink1"
+				}
+			],
+			"transformations": [],
+			"scriptLines": [
+				"source(output(",
+				"          commitInfo as (timestamp as integer, userId as string, userName as string, operation as string, operationParameters as (partitionBy as string, clusterBy as string, description as string, isManaged as string, properties as string, statsOnLoad as boolean, outputMode as string, queryId as string, epochId as string), notebook as (notebookId as string), clusterId as string, isolationLevel as string, isBlindAppend as boolean, operationMetrics as (numRemovedFiles as string, numOutputRows as string, numOutputBytes as string, numAddedFiles as string), tags as (restoresDeletedRows as string), engineInfo as string, txnId as string, readVersion as integer),",
+				"          metaData as (id as string, format as (provider as string, options as ({} as string)), schemaString as string, partitionColumns as string[], configuration as ({delta.enableDeletionVectors} as string), createdTime as integer),",
+				"          protocol as (minReaderVersion as integer, minWriterVersion as integer, readerFeatures as string[], writerFeatures as string[]),",
+				"          txn as (appId as string, version as integer, lastUpdated as integer),",
+				"          add as (path as string, partitionValues as ({} as string), size as integer, modificationTime as integer, dataChange as boolean, stats as string, tags as (INSERTION_TIME as string, MIN_INSERTION_TIME as string, MAX_INSERTION_TIME as string, OPTIMIZE_TARGET_SIZE as string)),",
+				"          sizeInBytes as integer,",
+				"          rowCount as integer,",
+				"          colStats as (description as (distinctCount as integer, nullCount as integer, avgLen as integer, maxLen as integer, version as integer, rowCount as integer, createdAt as integer, createdBy as string, hllSketch as (bytes as string)), release_year as (distinctCount as integer, nullCount as integer, avgLen as integer, maxLen as integer, version as integer, rowCount as integer, createdAt as integer, createdBy as string, hllSketch as (bytes as string)), show_id as (distinctCount as integer, nullCount as integer, avgLen as integer, maxLen as integer, version as integer, rowCount as integer, createdAt as integer, createdBy as string, hllSketch as (bytes as string)), duration_seasons as (distinctCount as integer, nullCount as integer, avgLen as integer, maxLen as integer, version as integer, rowCount as integer, createdAt as integer, createdBy as string, hllSketch as (bytes as string)), rating as (distinctCount as integer, nullCount as integer, avgLen as integer, maxLen as integer, version as integer, rowCount as integer, createdAt as integer, createdBy as string, hllSketch as (bytes as string)), duration_minutes as (distinctCount as integer, nullCount as integer, avgLen as integer, maxLen as integer, version as integer, rowCount as integer, createdAt as integer, createdBy as string, hllSketch as (bytes as string)), {_rescued_data} as (distinctCount as integer, nullCount as integer, avgLen as integer, maxLen as integer, version as integer, rowCount as integer, createdAt as integer, createdBy as string, hllSketch as (bytes as string)), date_added as (distinctCount as integer, nullCount as integer, avgLen as integer, maxLen as integer, version as integer, rowCount as integer, createdAt as integer, createdBy as string, hllSketch as (bytes as string)), title as (distinctCount as integer, nullCount as integer, avgLen as integer, maxLen as integer, version as integer, rowCount as integer, createdAt as integer, createdBy as string, hllSketch as (bytes as string)), type as (distinctCount as integer, nullCount as integer, avgLen as integer, maxLen as integer, version as integer, rowCount as integer, createdAt as integer, createdBy as string, hllSketch as (bytes as string))),",
+				"          history as string[],",
+				"          createdAt as integer,",
+				"          createdBy as string,",
+				"          version as integer,",
+				"          auxiliaryInfo as string,",
+				"          traceEnabled as boolean",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: true,",
+				"     inferDriftedColumnTypes: true,",
+				"     limit: 10,",
+				"     ignoreNoFilesFound: false,",
+				"     documentForm: 'documentPerLine') ~> source1",
+				"source1 sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     input(",
+				"          commitInfo as (timestamp as integer, userId as string, userName as string, operation as string, operationParameters as (partitionBy as string, clusterBy as string, description as string, isManaged as string, properties as string, statsOnLoad as boolean, outputMode as string, queryId as string, epochId as string), notebook as (notebookId as string), clusterId as string, isolationLevel as string, isBlindAppend as boolean, operationMetrics as (numRemovedFiles as string, numOutputRows as string, numOutputBytes as string, numAddedFiles as string), tags as (restoresDeletedRows as string), engineInfo as string, txnId as string, readVersion as integer),",
+				"          metaData as (id as string, format as (provider as string, options as ({} as string)), schemaString as string, partitionColumns as string[], configuration as ({delta.enableDeletionVectors} as string), createdTime as integer),",
+				"          protocol as (minReaderVersion as integer, minWriterVersion as integer, readerFeatures as string[], writerFeatures as string[]),",
+				"          txn as (appId as string, version as integer, lastUpdated as integer),",
+				"          add as (path as string, partitionValues as ({} as string), size as integer, modificationTime as integer, dataChange as boolean, stats as string, tags as (INSERTION_TIME as string, MIN_INSERTION_TIME as string, MAX_INSERTION_TIME as string, OPTIMIZE_TARGET_SIZE as string)),",
+				"          sizeInBytes as integer,",
+				"          rowCount as integer,",
+				"          colStats as (description as (distinctCount as integer, nullCount as integer, avgLen as integer, maxLen as integer, version as integer, rowCount as integer, createdAt as integer, createdBy as string, hllSketch as (bytes as string)), release_year as (distinctCount as integer, nullCount as integer, avgLen as integer, maxLen as integer, version as integer, rowCount as integer, createdAt as integer, createdBy as string, hllSketch as (bytes as string)), show_id as (distinctCount as integer, nullCount as integer, avgLen as integer, maxLen as integer, version as integer, rowCount as integer, createdAt as integer, createdBy as string, hllSketch as (bytes as string)), duration_seasons as (distinctCount as integer, nullCount as integer, avgLen as integer, maxLen as integer, version as integer, rowCount as integer, createdAt as integer, createdBy as string, hllSketch as (bytes as string)), rating as (distinctCount as integer, nullCount as integer, avgLen as integer, maxLen as integer, version as integer, rowCount as integer, createdAt as integer, createdBy as string, hllSketch as (bytes as string)), duration_minutes as (distinctCount as integer, nullCount as integer, avgLen as integer, maxLen as integer, version as integer, rowCount as integer, createdAt as integer, createdBy as string, hllSketch as (bytes as string)), {_rescued_data} as (distinctCount as integer, nullCount as integer, avgLen as integer, maxLen as integer, version as integer, rowCount as integer, createdAt as integer, createdBy as string, hllSketch as (bytes as string)), date_added as (distinctCount as integer, nullCount as integer, avgLen as integer, maxLen as integer, version as integer, rowCount as integer, createdAt as integer, createdBy as string, hllSketch as (bytes as string)), title as (distinctCount as integer, nullCount as integer, avgLen as integer, maxLen as integer, version as integer, rowCount as integer, createdAt as integer, createdBy as string, hllSketch as (bytes as string)), type as (distinctCount as integer, nullCount as integer, avgLen as integer, maxLen as integer, version as integer, rowCount as integer, createdAt as integer, createdBy as string, hllSketch as (bytes as string))),",
+				"          history as string[],",
+				"          createdAt as integer,",
+				"          createdBy as string,",
+				"          version as integer,",
+				"          auxiliaryInfo as string,",
+				"          traceEnabled as boolean",
+				"     ),",
+				"     umask: 0022,",
+				"     preCommands: [],",
+				"     postCommands: [],",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     saveOrder: 1) ~> sink1"
+			]
+		}
+	}
+}

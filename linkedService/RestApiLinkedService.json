@@ -1,0 +1,14 @@
+{
+	"name": "RestApiLinkedService",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"description": "Connect weather api",
+		"annotations": [],
+		"type": "RestService",
+		"typeProperties": {
+			"url": "https://api.weatherstack.com/current?query=New Delhi&access_key=e166a8cf68b7fdc7479c8f592cff6cd6\n",
+			"enableServerCertificateValidation": true,
+			"authenticationType": "Anonymous"
+		}
+	}
+}

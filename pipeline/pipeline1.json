@@ -1,0 +1,112 @@
+{
+	"name": "pipeline1",
+	"properties": {
+		"activities": [
+			{
+				"name": "Until1",
+				"type": "Until",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"expression": {
+						"value": "@equals(variables('Api_Wait_Until'),'True')",
+						"type": "Expression"
+					},
+					"activities": [
+						{
+							"name": "Web1_copy2",
+							"type": "WebActivity",
+							"dependsOn": [],
+							"policy": {
+								"timeout": "0.12:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"method": "GET",
+								"url": {
+									"value": "https://api.weatherstack.com/current?query=@{pipeline().parameters.place}&access_key=@{pipeline().parameters.PASTE_YOUR_API_KEY_HERE}\n",
+									"type": "Expression"
+								}
+							}
+						},
+						{
+							"name": "If Condition1",
+							"type": "IfCondition",
+							"dependsOn": [
+								{
+									"activity": "Web1_copy2",
+									"dependencyConditions": [
+										"Succeeded"
+									]
+								}
+							],
+							"userProperties": [],
+							"typeProperties": {
+								"expression": {
+									"value": "@contains(activity('Web1_copy2').output,'success')",
+									"type": "Expression"
+								},
+								"ifFalseActivities": [
+									{
+										"name": "Set True",
+										"type": "SetVariable",
+										"dependsOn": [],
+										"policy": {
+											"secureOutput": false,
+											"secureInput": false
+										},
+										"userProperties": [],
+										"typeProperties": {
+											"variableName": "Api_Wait_Until",
+											"value": "True"
+										}
+									}
+								],
+								"ifTrueActivities": [
+									{
+										"name": "Set False",
+										"type": "SetVariable",
+										"dependsOn": [],
+										"policy": {
+											"secureOutput": false,
+											"secureInput": false
+										},
+										"userProperties": [],
+										"typeProperties": {
+											"variableName": "Api_Wait_Until",
+											"value": "False"
+										}
+									}
+								]
+							}
+						}
+					],
+					"timeout": "00:01:00"
+				}
+			}
+		],
+		"parameters": {
+			"PASTE_YOUR_API_KEY_HERE": {
+				"type": "string",
+				"defaultValue": "e166a8cf68b7fdc7479c8f592cff6cd6_1"
+			},
+			"place": {
+				"type": "string",
+				"defaultValue": "Indore"
+			}
+		},
+		"variables": {
+			"Api_Wait_Until": {
+				"type": "String",
+				"defaultValue": "False"
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2025-04-30T17:41:52Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

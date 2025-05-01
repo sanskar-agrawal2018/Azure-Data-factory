@@ -1,0 +1,635 @@
+{
+	"name": "Json1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureDataLakeStorage1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileSystem": "intake"
+			}
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"commitInfo": {
+					"type": "object",
+					"properties": {
+						"timestamp": {
+							"type": "integer"
+						},
+						"userId": {
+							"type": "string"
+						},
+						"userName": {
+							"type": "string"
+						},
+						"operation": {
+							"type": "string"
+						},
+						"operationParameters": {
+							"type": "object",
+							"properties": {
+								"partitionBy": {
+									"type": "string"
+								},
+								"clusterBy": {
+									"type": "string"
+								},
+								"description": {
+									"type": "null"
+								},
+								"isManaged": {
+									"type": "string"
+								},
+								"properties": {
+									"type": "string"
+								},
+								"statsOnLoad": {
+									"type": "boolean"
+								},
+								"outputMode": {
+									"type": "string"
+								},
+								"queryId": {
+									"type": "string"
+								},
+								"epochId": {
+									"type": "string"
+								}
+							}
+						},
+						"notebook": {
+							"type": "object",
+							"properties": {
+								"notebookId": {
+									"type": "string"
+								}
+							}
+						},
+						"clusterId": {
+							"type": "string"
+						},
+						"isolationLevel": {
+							"type": "string"
+						},
+						"isBlindAppend": {
+							"type": "boolean"
+						},
+						"operationMetrics": {
+							"type": "object",
+							"properties": {
+								"numRemovedFiles": {
+									"type": "string"
+								},
+								"numOutputRows": {
+									"type": "string"
+								},
+								"numOutputBytes": {
+									"type": "string"
+								},
+								"numAddedFiles": {
+									"type": "string"
+								}
+							}
+						},
+						"tags": {
+							"type": "object",
+							"properties": {
+								"restoresDeletedRows": {
+									"type": "string"
+								}
+							}
+						},
+						"engineInfo": {
+							"type": "string"
+						},
+						"txnId": {
+							"type": "string"
+						},
+						"readVersion": {
+							"type": "integer"
+						}
+					}
+				},
+				"metaData": {
+					"type": "object",
+					"properties": {
+						"id": {
+							"type": "string"
+						},
+						"format": {
+							"type": "object",
+							"properties": {
+								"provider": {
+									"type": "string"
+								},
+								"options": {
+									"type": "object"
+								}
+							}
+						},
+						"schemaString": {
+							"type": "string"
+						},
+						"partitionColumns": {
+							"type": "array"
+						},
+						"configuration": {
+							"type": "object",
+							"properties": {
+								"delta.enableDeletionVectors": {
+									"type": "string"
+								}
+							}
+						},
+						"createdTime": {
+							"type": "integer"
+						}
+					}
+				},
+				"protocol": {
+					"type": "object",
+					"properties": {
+						"minReaderVersion": {
+							"type": "integer"
+						},
+						"minWriterVersion": {
+							"type": "integer"
+						},
+						"readerFeatures": {
+							"type": "array",
+							"items": {
+								"type": "string"
+							}
+						},
+						"writerFeatures": {
+							"type": "array",
+							"items": {
+								"type": "string"
+							}
+						}
+					}
+				},
+				"txn": {
+					"type": "object",
+					"properties": {
+						"appId": {
+							"type": "string"
+						},
+						"version": {
+							"type": "integer"
+						},
+						"lastUpdated": {
+							"type": "integer"
+						}
+					}
+				},
+				"add": {
+					"type": "object",
+					"properties": {
+						"path": {
+							"type": "string"
+						},
+						"partitionValues": {
+							"type": "object"
+						},
+						"size": {
+							"type": "integer"
+						},
+						"modificationTime": {
+							"type": "integer"
+						},
+						"dataChange": {
+							"type": "boolean"
+						},
+						"stats": {
+							"type": "string"
+						},
+						"tags": {
+							"type": "object",
+							"properties": {
+								"INSERTION_TIME": {
+									"type": "string"
+								},
+								"MIN_INSERTION_TIME": {
+									"type": "string"
+								},
+								"MAX_INSERTION_TIME": {
+									"type": "string"
+								},
+								"OPTIMIZE_TARGET_SIZE": {
+									"type": "string"
+								}
+							}
+						}
+					}
+				},
+				"sizeInBytes": {
+					"type": "integer"
+				},
+				"rowCount": {
+					"type": "integer"
+				},
+				"colStats": {
+					"type": "object",
+					"properties": {
+						"description": {
+							"type": "object",
+							"properties": {
+								"distinctCount": {
+									"type": "integer"
+								},
+								"nullCount": {
+									"type": "integer"
+								},
+								"avgLen": {
+									"type": "integer"
+								},
+								"maxLen": {
+									"type": "integer"
+								},
+								"version": {
+									"type": "integer"
+								},
+								"rowCount": {
+									"type": "integer"
+								},
+								"createdAt": {
+									"type": "integer"
+								},
+								"createdBy": {
+									"type": "string"
+								},
+								"hllSketch": {
+									"type": "object",
+									"properties": {
+										"bytes": {
+											"type": "string"
+										}
+									}
+								}
+							}
+						},
+						"release_year": {
+							"type": "object",
+							"properties": {
+								"distinctCount": {
+									"type": "integer"
+								},
+								"nullCount": {
+									"type": "integer"
+								},
+								"avgLen": {
+									"type": "integer"
+								},
+								"maxLen": {
+									"type": "integer"
+								},
+								"version": {
+									"type": "integer"
+								},
+								"rowCount": {
+									"type": "integer"
+								},
+								"createdAt": {
+									"type": "integer"
+								},
+								"createdBy": {
+									"type": "string"
+								},
+								"hllSketch": {
+									"type": "object",
+									"properties": {
+										"bytes": {
+											"type": "string"
+										}
+									}
+								}
+							}
+						},
+						"show_id": {
+							"type": "object",
+							"properties": {
+								"distinctCount": {
+									"type": "integer"
+								},
+								"nullCount": {
+									"type": "integer"
+								},
+								"avgLen": {
+									"type": "integer"
+								},
+								"maxLen": {
+									"type": "integer"
+								},
+								"version": {
+									"type": "integer"
+								},
+								"rowCount": {
+									"type": "integer"
+								},
+								"createdAt": {
+									"type": "integer"
+								},
+								"createdBy": {
+									"type": "string"
+								},
+								"hllSketch": {
+									"type": "object",
+									"properties": {
+										"bytes": {
+											"type": "string"
+										}
+									}
+								}
+							}
+						},
+						"duration_seasons": {
+							"type": "object",
+							"properties": {
+								"distinctCount": {
+									"type": "integer"
+								},
+								"nullCount": {
+									"type": "integer"
+								},
+								"avgLen": {
+									"type": "integer"
+								},
+								"maxLen": {
+									"type": "integer"
+								},
+								"version": {
+									"type": "integer"
+								},
+								"rowCount": {
+									"type": "integer"
+								},
+								"createdAt": {
+									"type": "integer"
+								},
+								"createdBy": {
+									"type": "string"
+								},
+								"hllSketch": {
+									"type": "object",
+									"properties": {
+										"bytes": {
+											"type": "string"
+										}
+									}
+								}
+							}
+						},
+						"rating": {
+							"type": "object",
+							"properties": {
+								"distinctCount": {
+									"type": "integer"
+								},
+								"nullCount": {
+									"type": "integer"
+								},
+								"avgLen": {
+									"type": "integer"
+								},
+								"maxLen": {
+									"type": "integer"
+								},
+								"version": {
+									"type": "integer"
+								},
+								"rowCount": {
+									"type": "integer"
+								},
+								"createdAt": {
+									"type": "integer"
+								},
+								"createdBy": {
+									"type": "string"
+								},
+								"hllSketch": {
+									"type": "object",
+									"properties": {
+										"bytes": {
+											"type": "string"
+										}
+									}
+								}
+							}
+						},
+						"duration_minutes": {
+							"type": "object",
+							"properties": {
+								"distinctCount": {
+									"type": "integer"
+								},
+								"nullCount": {
+									"type": "integer"
+								},
+								"avgLen": {
+									"type": "integer"
+								},
+								"maxLen": {
+									"type": "integer"
+								},
+								"version": {
+									"type": "integer"
+								},
+								"rowCount": {
+									"type": "integer"
+								},
+								"createdAt": {
+									"type": "integer"
+								},
+								"createdBy": {
+									"type": "string"
+								},
+								"hllSketch": {
+									"type": "object",
+									"properties": {
+										"bytes": {
+											"type": "string"
+										}
+									}
+								}
+							}
+						},
+						"_rescued_data": {
+							"type": "object",
+							"properties": {
+								"distinctCount": {
+									"type": "integer"
+								},
+								"nullCount": {
+									"type": "integer"
+								},
+								"avgLen": {
+									"type": "integer"
+								},
+								"maxLen": {
+									"type": "integer"
+								},
+								"version": {
+									"type": "integer"
+								},
+								"rowCount": {
+									"type": "integer"
+								},
+								"createdAt": {
+									"type": "integer"
+								},
+								"createdBy": {
+									"type": "string"
+								},
+								"hllSketch": {
+									"type": "object",
+									"properties": {
+										"bytes": {
+											"type": "string"
+										}
+									}
+								}
+							}
+						},
+						"date_added": {
+							"type": "object",
+							"properties": {
+								"distinctCount": {
+									"type": "integer"
+								},
+								"nullCount": {
+									"type": "integer"
+								},
+								"avgLen": {
+									"type": "integer"
+								},
+								"maxLen": {
+									"type": "integer"
+								},
+								"version": {
+									"type": "integer"
+								},
+								"rowCount": {
+									"type": "integer"
+								},
+								"createdAt": {
+									"type": "integer"
+								},
+								"createdBy": {
+									"type": "string"
+								},
+								"hllSketch": {
+									"type": "object",
+									"properties": {
+										"bytes": {
+											"type": "string"
+										}
+									}
+								}
+							}
+						},
+						"title": {
+							"type": "object",
+							"properties": {
+								"distinctCount": {
+									"type": "integer"
+								},
+								"nullCount": {
+									"type": "integer"
+								},
+								"avgLen": {
+									"type": "integer"
+								},
+								"maxLen": {
+									"type": "integer"
+								},
+								"version": {
+									"type": "integer"
+								},
+								"rowCount": {
+									"type": "integer"
+								},
+								"createdAt": {
+									"type": "integer"
+								},
+								"createdBy": {
+									"type": "string"
+								},
+								"hllSketch": {
+									"type": "object",
+									"properties": {
+										"bytes": {
+											"type": "string"
+										}
+									}
+								}
+							}
+						},
+						"type": {
+							"type": "object",
+							"properties": {
+								"distinctCount": {
+									"type": "integer"
+								},
+								"nullCount": {
+									"type": "integer"
+								},
+								"avgLen": {
+									"type": "integer"
+								},
+								"maxLen": {
+									"type": "integer"
+								},
+								"version": {
+									"type": "integer"
+								},
+								"rowCount": {
+									"type": "integer"
+								},
+								"createdAt": {
+									"type": "integer"
+								},
+								"createdBy": {
+									"type": "string"
+								},
+								"hllSketch": {
+									"type": "object",
+									"properties": {
+										"bytes": {
+											"type": "string"
+										}
+									}
+								}
+							}
+						}
+					}
+				},
+				"history": {
+					"type": "array"
+				},
+				"createdAt": {
+					"type": "integer"
+				},
+				"createdBy": {
+					"type": "string"
+				},
+				"version": {
+					"type": "integer"
+				},
+				"auxiliaryInfo": {
+					"type": "string"
+				},
+				"traceEnabled": {
+					"type": "boolean"
+				}
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
