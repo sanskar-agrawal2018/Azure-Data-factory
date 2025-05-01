@@ -244,20 +244,17 @@
 							},
 							{
 								"source": {
-									"path": "$['current']['weather_icons'][0]"
-								}
-							},
-							{
-								"source": {
-									"path": "$['current']['weather_descriptions'][0]"
-								}
-							},
-							{
-								"source": {
 									"path": "$['Column_1']"
-								},
-								"sink": {
-									"path": ""
+								}
+							},
+							{
+								"source": {
+									"path": "$['Column_2']"
+								}
+							},
+							{
+								"source": {
+									"path": "$['Column_3']"
 								}
 							}
 						]
