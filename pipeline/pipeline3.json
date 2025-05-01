@@ -257,7 +257,7 @@
 									"path": "$['Column_1']"
 								},
 								"sink": {
-									"path": "$['request']"
+									"path": ""
 								}
 							}
 						]
