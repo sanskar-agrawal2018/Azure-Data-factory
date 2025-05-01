@@ -119,6 +119,16 @@
 							},
 							{
 								"source": {
+									"path": "$['current']['weather_icons'][0]"
+								}
+							},
+							{
+								"source": {
+									"path": "$['current']['weather_descriptions'][0]"
+								}
+							},
+							{
+								"source": {
 									"path": "$['current']['astro']['sunrise']"
 								}
 							},
@@ -240,21 +250,6 @@
 							{
 								"source": {
 									"path": "$['current']['is_day']"
-								}
-							},
-							{
-								"source": {
-									"path": "$['current']['weather_icons'][0]"
-								}
-							},
-							{
-								"source": {
-									"path": "$['current']['weather_descriptions'][0]"
-								}
-							},
-							{
-								"source": {
-									"path": "$['Column_1']"
 								}
 							}
 						]
